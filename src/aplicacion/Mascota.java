@@ -16,9 +16,9 @@ public class Mascota {
 		this.aburridaDesde = aburridaDesde;
 	}
 
-	public void comer() {
+	public String comer() {
 		switch (estado) {
-		case "hambienta":
+		case "hambrienta":
 			estado = "contenta";
 			break;
 		case "contenta":
@@ -30,10 +30,11 @@ public class Mascota {
 			}
 			break;
 		}
-
+		
+		return estado;
 	}
 
-	public void jugar() {
+	public String jugar() {
 		switch (estado) {
 		case "contenta":
 			nivel += 2;
@@ -44,6 +45,8 @@ public class Mascota {
 		case "hambrienta":
 			System.out.println("No puedo jugar, estoy hambrienta..");
 		}
+		
+		return estado;
 	}
 
 	public int getNivel() {

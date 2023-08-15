@@ -3,6 +3,9 @@
   <groupId>CACSpringNivelacion01</groupId>
   <artifactId>CACSpringNivelacion01</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+
+</dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>

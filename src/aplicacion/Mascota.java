@@ -8,18 +8,21 @@ public class Mascota {
 	private String estado;
 	private int nivel;
 	private LocalDateTime aburridaDesde;
+	private boolean puedeJugar;
 
-	public Mascota(String estado, int nivel, LocalDateTime aburridaDesde) {
+	public Mascota(String estado, int nivel, LocalDateTime aburridaDesde, boolean puedeJugar) {
 		super();
 		this.estado = estado;
 		this.nivel = nivel;
 		this.aburridaDesde = aburridaDesde;
+		this.puedeJugar = puedeJugar;
 	}
 
 	public String comer() {
 		switch (estado) {
 		case "hambrienta":
 			estado = "contenta";
+			puedeJugar = true;
 			break;
 		case "contenta":
 			nivel++;
@@ -30,7 +33,7 @@ public class Mascota {
 			}
 			break;
 		}
-		
+
 		return estado;
 	}
 
@@ -43,16 +46,23 @@ public class Mascota {
 			estado = "contenta";
 			break;
 		case "hambrienta":
-			System.out.println("No puedo jugar, estoy hambrienta..");
+			puedeJugar = false;
 		}
-		
+
 		return estado;
 	}
 
 	public int getNivel() {
 		return nivel;
 	}
-	
-	
+
+	public boolean isPuedeJugar() {
+
+		if (estado == "hambrienta") {
+			puedeJugar = false;
+		}
+
+		return puedeJugar;
+	}
 
 }
